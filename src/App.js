@@ -15,7 +15,7 @@ const App = () => {
                 <h2>Thank you for FLEX!</h2>
             </div>
             <div class="theme">
-                <h2>These frogs told me everything! Ahpiauwdapaidhpaidhihwbfowufboweisygrbewoiyvsfbu</h2>
+                <h2>These frogs told me everything! </h2>
             </div>
         </div>
 
