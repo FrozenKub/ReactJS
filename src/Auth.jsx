@@ -35,6 +35,7 @@ export default function ContactUs() {
         emailjs.sendForm("gmail","templateID", e.target, 'userID')
             .then((result) => {
                 console.log(result.text);
+                alert("Check your inbox.");
             }, (error) => {
                 console.log(error.text);
             });
