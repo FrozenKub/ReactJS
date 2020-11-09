@@ -13,6 +13,8 @@ import Spoty from "./Spotify.jsx"
 import Profile from "./Profile.jsx"
 import StickyUp from "./Sticky.jsx"
 import Login from "./Login.jsx"
+import Code from "./Code.jsx"
+import Auth from "./Auth.jsx"
 
 
 
@@ -31,6 +33,9 @@ export default function Main() {
                                 <Link to="/">Home</Link>
                             </a>
                             <a className="button">
+                                <Link to="/auth">Auth</Link>
+                            </a>
+                            <a className="button">
                                 <Link to="/login">Login</Link>
                             </a>
                             <a className="button">
@@ -40,6 +45,14 @@ export default function Main() {
 
                     </Route>
 
+
+
+                    <Route exact path="/auth">
+                        <Auth />
+                    </Route>
+                    <Route exact path="/code">
+                        <Code />
+                    </Route>
                     <Route exact path="/login">
                             <Login />
                     </Route>
