@@ -15,6 +15,7 @@ import StickyUp from "./Sticky.jsx"
 import Login from "./Login.jsx"
 import Code from "./Code.jsx"
 import Auth from "./Auth.jsx"
+import Register from "./Register.jsx"
 
 
 
@@ -41,12 +42,18 @@ export default function Main() {
                             <a className="button">
                                 <Link to="/main">Main</Link>
                             </a>
+                            <a className="button">
+                                <Link to="/register">Register</Link>
+                            </a>
                         </div>
 
                     </Route>
 
 
 
+                    <Route exact path="/register">
+                        <Register />
+                    </Route>
                     <Route exact path="/auth">
                         <Auth />
                     </Route>

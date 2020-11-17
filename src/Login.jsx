@@ -14,13 +14,20 @@ const UpperCorner = styled.div`
     position: absolute;
     top: 0vh;
     right: 5vw;
-    width: 20vw;
+    width: 30vw;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
 `;
+
+
+const LoginPasswordInput = styled.input`
+font-size: 10pt;
+color: #c5e5ef;
+`;
+
 
 
 const LargerA = styled.a`
@@ -56,11 +63,11 @@ class loginClass extends React.Component{
 
                 <div className="login">
                     <div>
-                        <input type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="Username"/>
+                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="Username"/>
                     </div>
 
                     <div>
-                        <input type="password" onChange={e=>{this.setState({password: e.target.value})}} name="password" placeholder="Password"/>
+                        <LoginPasswordInput type="password" onChange={e=>{this.setState({password: e.target.value})}} name="password" placeholder="Password"/>
                     </div>
 
                 </div>

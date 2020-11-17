@@ -23,6 +23,12 @@ const UpperCorner = styled.div`
 `;
 
 
+const EmailInput = styled.input`
+font-size: 10pt;
+color: #c5e5ef;
+`;
+
+
 const LargerA = styled.a`
 font-size: 14pt;
 `;
@@ -32,7 +38,7 @@ export default function ContactUs() {
     function sendEmail(e) {
         e.preventDefault();
 
-        emailjs.sendForm("gmail","templateID", e.target, 'userID')
+        emailjs.sendForm("gmail","template_mv7eeiy", e.target, 'user_ScTodztvA8pgfTzqzTyWB')
             .then((result) => {
                 console.log(result.text);
                 alert("Check your inbox.");
@@ -60,7 +66,7 @@ export default function ContactUs() {
             <form className="contact-form" onSubmit={sendEmail}>
                 <div className="login">
                     <div>
-                <input type="email" name="email" placeholder="EMAIL"/>
+                <EmailInput type="email" name="email" placeholder="EMAIL"/>
                         <input type="submit" value="Send" className="loginbutton"/>
                     </div>
 
