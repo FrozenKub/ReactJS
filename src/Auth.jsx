@@ -62,7 +62,7 @@ export default function ContactUs() {
                 </LargerA>
             </UpperCorner>
 
-            <img src="/public/AnFoLogo.png" className="logo"/>
+            <img src="/AnFoLogo.png" className="logo"/>
             <form className="contact-form" onSubmit={sendEmail}>
                 <div className="login">
                     <div>

@@ -7,7 +7,7 @@ const profile = () => {
         <div>
 
         <div class="profile">
-            <h3>Reg-Date: 01.11.20</h3>
+            <h3 className="mar">Reg-Date: 01.11.20</h3>
             <h3>Last-Login: 01.11.20</h3>
             <h3>Total Posts: 123</h3>
             <h3>Total Comments: 587</h3>
@@ -18,7 +18,7 @@ const profile = () => {
             <div className="profile-pic">
 
                 <h2>ID: <span class="fz">#0</span></h2>
-                <img src="/public/avarat.png" width="20%" alt="Hi"/>
+                <img src="/AF_Logo_1-01.png" width="20%" alt="Hi"/>
 
             </div>
         </div>

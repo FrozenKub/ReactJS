@@ -4,7 +4,7 @@ const Logo = () => {
     return (
         <>
         <div class="block-right-name">
-            <h1 className="rightbname"><span class="fz">#0 </span> - HELLO WORLD! WELCOME TO ANFO! (READ THIS)</h1>
+            <h1 className="mar"><span class="fz">#0 </span> - HELLO WORLD! WELCOME TO ANFO! (READ THIS)</h1>
         </div>
         <div class="block-right">
             <p class="rightbcontent">

@@ -59,7 +59,7 @@ class refisterClass extends React.Component{
                     </LargerA>
                 </UpperCorner>
 
-                <img src="/public/AnFoLogo.png" className="logo"/>
+                <img src="/AnFoLogo.png" className="logo"/>
 
                 <div className="login">
                     <div>
