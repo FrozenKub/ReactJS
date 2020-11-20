@@ -56,7 +56,6 @@ class Code extends React.Component {
 
             <div className="login-page">
 
-
                 <UpperCorner>
                     <LargerA>
                         <Link to="/">Home</Link>

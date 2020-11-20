@@ -17,6 +17,8 @@
     "git": "^0.1.5",
     "mongoose": "^5.10.11",
     "passport": "^0.4.1",
+    "passport-cookie": "^1.0.8",
+    "passport-local": "^1.0.0",
     "postcss": "^8.1.6",
     "precss": "^4.0.0",
     "react": "^17.0.1",

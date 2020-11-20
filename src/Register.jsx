@@ -34,7 +34,7 @@ const LargerA = styled.a`
 font-size: 14pt;
 `;
 
-class refisterClass extends React.Component{
+class registerClass extends React.Component{
     constructor(props) {
         super(props);
         this.state = {login: "", password: ""}
@@ -63,7 +63,7 @@ class refisterClass extends React.Component{
 
                 <div className="login">
                     <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="Username"/>
+                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="EMAIL ADRESS"/>
                     </div>
 
                     <div>
@@ -80,4 +80,4 @@ class refisterClass extends React.Component{
 }
 
 
-export default refisterClass;
+export default registerClass;

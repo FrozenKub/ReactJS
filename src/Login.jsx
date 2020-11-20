@@ -63,7 +63,7 @@ class loginClass extends React.Component{
 
                 <div className="login">
                     <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="Username"/>
+                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="AnFo ID"/>
                     </div>
 
                     <div>

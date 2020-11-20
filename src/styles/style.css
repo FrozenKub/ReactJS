@@ -107,14 +107,17 @@ body {
   flex: none;
   background-color: #00182d;
   width: 16vw;
+  max-height: 5vh;
+  min-height: 5vh;
   max-width: 16vw;
+  min-width: 16vw;
   height: 10vh;
   position: relative;
   align-self: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   line-height: 4vh;
-  margin-left: 1vw;
+  margin-left: 1px;
   margin-right: 1vw;
   overflow: hidden;
   white-space: nowrap;
@@ -278,7 +281,7 @@ p{
 /* LINKS */
 a:link,a:visited {
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
   text-shadow: none;
 }
 a:hover {
