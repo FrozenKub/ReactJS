@@ -32,7 +32,7 @@ export default function Main() {
                 && e.y < logoIcon.getBoundingClientRect().y + (logoIcon.getBoundingClientRect().height/2))
             {
                 let valueYTop = (logoIcon.getBoundingClientRect().height/2 - (e.y - logoIcon.getBoundingClientRect().y))/10;
-                gsap.to(logoIcon, 1, {rotationX: valueYTop})
+                gsap.to(logoIcon, 1, {rotationX: 1 * valueYTop})
             }
 
             if (e.y > logoIcon.getBoundingClientRect().y + (logoIcon.getBoundingClientRect().height/2)

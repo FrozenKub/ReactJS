@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import App from "./App.jsx"
-import Logo from "./Logo.jsx"
 import Spoty from "./Spotify.jsx"
 import Profile from "./Profile.jsx"
 import StickyUp from "./Sticky.jsx"
@@ -93,7 +92,6 @@ export default function Main() {
                     <Route exact path="/main">
                         <>
                         <App />
-                            <Logo />
                             <Spoty />
                             <Profile />
                             <StickyUp />
