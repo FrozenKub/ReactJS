@@ -15,32 +15,9 @@ import Login from "./Login.jsx"
 import Code from "./Code.jsx"
 import Auth from "./Auth.jsx"
 import Register from "./Register.jsx"
-import Anim from "./animation.js"
-import gsap from "gsap"
 
 export default function Main() {
-    let logoIcon = useRef(null);
 
-    useEffect(()=>
-    {
-        document.addEventListener("mousemove", function(e){
-
-            if (e.x>logoIcon.getBoundingClientRect().x
-                && e.x<logoIcon.getBoundingClientRect().x + logoIcon.getBoundingClientRect().width
-                && e.y>logoIcon.getBoundingClientRect().y
-                && e.y<logoIcon.getBoundingClientRect().y + logoIcon.getBoundingClientRect().height)
-
-                    if (e.x > logoIcon.getBoundingClientRect().x
-                    && e.x < logoIcon.getBoundingClientRect().x + (logoIcon.getBoundingClientRect().width/2))
-                    {
-                        let valueXLeft = (logoIcon.getBoundingClientRect().width/2 - (e.x - logoIcon.getBoundingClientRect().x))/10;
-                        gsap.to(logoIcon, 1, {rotationY: -1 * valueXLeft})
-                    }
-        })
-
-    }, [])
-
-    console.log(logoIcon);
 
     return (
         <Router>
@@ -49,24 +26,18 @@ export default function Main() {
                     <Route exact path="/">
 
                         <div className="centered">
-                            <img ref={el => {logoIcon=el}} src="/AnFoLogo.png" className="logo"/>
-                            <a className="button">
-                                <Link to="/">Home</Link>
-                            </a>
-                            <a className="button">
-                                <Link to="/animtest">animtest</Link>
-                            </a>
-                            <a className="button">
+                            <img src="/AnFoLogo.png" className="logo"/>
+                            <a>
                                 <Link to="/auth">Auth</Link>
                             </a>
-                            <a className="button">
+                            <a>
                                 <Link to="/login">Login</Link>
                             </a>
-                            <a className="button">
-                                <Link to="/main">Main</Link>
-                            </a>
-                            <a className="button">
+                            <a>
                                 <Link to="/register">Register</Link>
+                            </a>
+                            <a>
+                                <Link to="/main">Main</Link>
                             </a>
                         </div>
 
@@ -74,9 +45,6 @@ export default function Main() {
 
 
 
-                    <Route exact path="/animtest">
-                        <Anim />
-                    </Route>
                     <Route exact path="/register">
                         <Register />
                     </Route>
@@ -107,5 +75,4 @@ export default function Main() {
 }
 
 function Home() {
-    return <h2></h2>;
 }
