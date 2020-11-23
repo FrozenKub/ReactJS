@@ -153,6 +153,17 @@ theme.button,button,input.button {
   justify-content: space-around;
 }
 
+.login-block
+{
+  background-color: #1d59ff;
+  width:70vw;
+  height: 70vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .spotyff
 {
   box-shadow: 0 0 10px rgba(197, 229, 234, 0.4);

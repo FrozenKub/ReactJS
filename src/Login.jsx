@@ -1,6 +1,4 @@
-import React from "react";
-
-
+import React, {useRef, useEffect} from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -34,14 +32,24 @@ const LargerA = styled.a`
 font-size: 14pt;
 `;
 
+
+
+
+
+
+
+
 class loginClass extends React.Component{
     constructor(props) {
         super(props);
+
         this.state = {login: "", password: ""}
     }
 
 
+
     render() {
+
         return (
 
             <div className="login-page">
@@ -59,6 +67,9 @@ class loginClass extends React.Component{
                     </LargerA>
                 </UpperCorner>
 
+                <div className="centered">
+                <div className="login-block">
+
                 <img src="/AnFoLogo.png" className="logo"/>
 
                 <div className="login">
@@ -73,6 +84,8 @@ class loginClass extends React.Component{
                 </div>
 
                 <div><input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/></div>
+                </div>
+                </div>
             </div>
 
         );
