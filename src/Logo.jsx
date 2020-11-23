@@ -1,19 +1,21 @@
 import React from "react";
 
+
 class Logo extends React.Component{
 
     constructor(props) {
         super(props);
 
-        this.state = {name: "", title: "", content: ""}
+        this.state = {name: "0", title: "HEY THERE! WELCOME!", content: "HERE IS CONTENT, YOU KNOW"}
     }
+
 
     render()
     {
     return (
         <>
         <div className="block-right-name">
-            <h1 className="mar"><span className="fz">#{this.props.name} </span> - {this.props.title}</h1>
+            <h1 className="marName"><span className={this.props.name}>@{this.props.name} </span> - {this.props.title}</h1>
         </div>
         <div className="block-right">
             <p className="rightbcontent">

@@ -4,7 +4,11 @@ import React from "react";
 
 const profile = () => {
     return (
-        <div>
+        <div >
+
+            <div  className="profBlock">
+
+            </div>
 
         <div class="profile">
             <h3 className="mar">Reg-Date: 01.11.20</h3>
@@ -17,7 +21,7 @@ const profile = () => {
 
             <div className="profile-pic">
 
-                <h2>ID: <span class="fz">#0</span></h2>
+                <h2>ID: <span class="CR34T0R">@CR34T0R</span></h2>
                 <img src="/AF_Logo_1-01.png" width="20%" alt="Hi"/>
 
             </div>
