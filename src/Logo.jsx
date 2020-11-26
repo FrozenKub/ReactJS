@@ -6,7 +6,10 @@ class Logo extends React.Component{
     constructor(props) {
         super(props);
 
-        this.state = {name: "0", title: "HEY THERE! WELCOME!", content: "HERE IS CONTENT, YOU KNOW"}
+        this.state = {
+            name: "0",
+            title: "HEY THERE! WELCOME!",
+            content: "HERE IS CONTENT, YOU KNOW"}
     }
 
 

@@ -43,7 +43,11 @@ class loginClass extends React.Component{
     constructor(props) {
         super(props);
 
-        this.state = {login: "", password: ""}
+        this.state =
+            {
+            login: "",
+            password: ""
+            }
     }
 
 
