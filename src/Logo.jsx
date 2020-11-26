@@ -8,7 +8,7 @@ class Logo extends React.Component{
 
         this.state = {
             name: "0",
-            title: "HEY THERE! WELCOME!",
+            title: "HEY THERE!",
             content: "HERE IS CONTENT, YOU KNOW"}
     }
 
