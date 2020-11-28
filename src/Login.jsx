@@ -87,7 +87,9 @@ class loginClass extends React.Component{
 
                 </div>
 
-                <div><input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/></div>
+                <div>
+                    <input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/>
+                </div>
                 </div>
                 </div>
             </div>

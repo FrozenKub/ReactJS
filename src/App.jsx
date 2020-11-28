@@ -2,6 +2,7 @@ import React from "react";
 
 import styled from 'styled-components';
 import Logo from './Logo.jsx';
+import PostCreation from './PostCreation.jsx';
 
 const Themeh2 = styled.p`
   color: #bddce6;
@@ -101,6 +102,7 @@ class App extends React.Component{
         array.push({name: array.length+1, title: "THIS IS POST", content: "Here is post number " + (array.length+1)})
         this.setState({name: "4NF0_CR34T10N", title: "POST WAS CREATED", content: "You've just created a new post! Great start!"})
     }
+
 
     render()
     {
