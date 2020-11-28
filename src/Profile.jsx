@@ -32,17 +32,6 @@ class Profile extends React.Component {
                     <h3>Total Posts: 123</h3>
                     <h3>Total Comments: 587</h3>
                     <h3>Total AnLi: 332</h3>
-                    <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({title: e.target.value})}} name="title" placeholder="Title"/>
-                    </div>
-
-                    <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="Content"/>
-                    </div>
-
-                    <div>
-                        <input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } value="AUTHORIZE"/>
-                    </div>
                 </div>
 
                 <div className="profile-pic">

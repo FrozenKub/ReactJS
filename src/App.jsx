@@ -2,7 +2,6 @@ import React from "react";
 
 import styled from 'styled-components';
 import Logo from './Logo.jsx';
-import PostCreation from './PostCreation.jsx';
 
 const Themeh2 = styled.p`
   color: #bddce6;
@@ -82,13 +81,42 @@ array.push({name: "46234", title: "The garden was blessed by the Gods of me and 
 array.push({name: "51133", title: "DO NOT DO IT!", content: "https://youtu.be/dQw4w9WgXcQ"})
 array.push({name: "6332", title: "Try me bitch.", content: "Yes"})
 
+
+const TitleInput = styled.input`
+width: 12vw;
+font-size: 10pt;
+color: #c5e5ef;
+border-radius: 0.3em;
+`;
+
+const ContentInput = styled.input`
+width: 13vw;
+height: 9vh;
+border-radius: 0.3em;
+font-size: 10pt;
+color: #c5e5ef;
+    overflow-x: hidden;
+    overflow-y: auto;
+`;
+
+const PostSubmit = styled.input`
+width: 13vw;
+border-radius: 0.3em;
+font-size: 10pt;
+color: #c5e5ef;
+    overflow-x: hidden;
+    overflow-y: auto;
+`;
+
+const userId = "CR34T0R";
+
 class App extends React.Component{
 
     constructor(props) {
         super(props);
 
         this.handleClick = this.handleClick.bind(this)
-        this.state = {name: "", title: "", content: ""}
+        this.state = {name: userId, title: "", content: ""}
     }
 
     handleClick(e)
@@ -99,10 +127,20 @@ class App extends React.Component{
     createPost(e)
     {
         e.preventDefault();
-        array.push({name: array.length+1, title: "THIS IS POST", content: "Here is post number " + (array.length+1)})
-        this.setState({name: "4NF0_CR34T10N", title: "POST WAS CREATED", content: "You've just created a new post! Great start!"})
+        array.push({name: this.state.name, title: this.state.title, content: this.state.content})
+        this.setState({name: userId, title: "POST WAS CREATED", content: "You've just created a new post! Great start!"})
     }
 
+    handlePostClick(e)
+    {
+        e.preventDefault();
+        let x = document.getElementById("createPost");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+    }
 
     render()
     {
@@ -113,12 +151,25 @@ class App extends React.Component{
 
             <div className="flex-container">
 
+
                 <A>
-                    <Button onClick={e=>{this.createPost(e)}} className="theme">
+                    <Button onClick={e=>{this.handlePostClick(e)}} className="theme">
                         <Themeh2 className="mar">CREATE POST</Themeh2>
                     </Button>
                 </A>
 
+                <div id="createPost" className="post-create">
+
+
+                        <TitleInput type="text" onChange={e=>{this.setState({title: e.target.value})}} name="title" placeholder="Title"/>
+
+
+
+                        <ContentInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="Content"/>
+
+
+                        <PostSubmit type="submit" onClick={e=>{e.preventDefault(); this.createPost(e)} }  value="AUTHORIZE"/>
+                </div>
 
                 <A>
                     <button onClick={e=>{this.setState({name: "CR34T0R", title: "H3LL0 W0R1D! W31C0M3 T0 TH3 F0RUM! (READ THIS)", content: "Welcome to the Anonymous Forum. This forum is a place for people to discuss anything you might want to discuss! We have created a few threads to get you started but feel free to start your own! Keep an eye out for red posts from moderators or even green posts from Forum creator himself! When you sign up to the forum, each and every one of you will get your own AnFo ID, which is a number based on when you signed up. You can find your AnFo ID by checking Profile Block on your right. NB: You do not have to post anything to see it. We love seeing all the exciting topics and discussions you have here! Remember to always respect all other AnFo users as we are all in this together! Abuse will not be tolerated and any unacceptable behavior will result in temporary or permanent bans from the AnFo society!"})}} className="theme">
