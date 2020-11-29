@@ -86,25 +86,28 @@ const TitleInput = styled.input`
 width: 12vw;
 font-size: 10pt;
 color: #c5e5ef;
-border-radius: 0.3em;
+border-radius: 0.1em;
+box-shadow: inset 2px 2px 2px rgb(0 0 0), inset -2px -2px 2px rgb(0 0 0 / 50%);
 `;
 
 const ContentInput = styled.textarea`
 background-color: #00182d;
 width: 13vw;
 height: 9vh;
-border-radius: 0.3em;
+border-radius: 0.1em;
 font-size: 10pt;
 color: #c5e5ef;
+box-shadow: inset 1px 1px 1px rgb(0 0 0), inset -1px -1px 1px rgb(0 0 0 / 50%);
 `;
 
 const PostSubmit = styled.input`
 width: 13vw;
-border-radius: 0.3em;
+border-radius: 0.1em;
 font-size: 10pt;
 color: #c5e5ef;
     overflow-x: hidden;
     overflow-y: auto;
+    box-shadow: inset 2px 2px 2px rgb(0 0 0), inset -2px -2px 2px rgb(0 0 0 / 50%);
 `;
 
 const userId = "CR34T0R";
@@ -126,8 +129,8 @@ class App extends React.Component{
     createPost(e)
     {
         e.preventDefault();
-        array.push({name: this.state.name, title: this.state.title, content: this.state.content})
-        this.setState({name: this.state.name, title: this.state.title, content: this.state.content})
+        array.push({name: userId, title: this.state.title, content: this.state.content})
+        this.setState({name: userId, title: this.state.title, content: this.state.content})
     }
 
     handlePostClick(e)
