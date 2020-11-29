@@ -89,14 +89,13 @@ color: #c5e5ef;
 border-radius: 0.3em;
 `;
 
-const ContentInput = styled.input`
+const ContentInput = styled.textarea`
+background-color: #00182d;
 width: 13vw;
 height: 9vh;
 border-radius: 0.3em;
 font-size: 10pt;
 color: #c5e5ef;
-    overflow-x: hidden;
-    overflow-y: auto;
 `;
 
 const PostSubmit = styled.input`
@@ -128,7 +127,7 @@ class App extends React.Component{
     {
         e.preventDefault();
         array.push({name: this.state.name, title: this.state.title, content: this.state.content})
-        this.setState({name: userId, title: "POST WAS CREATED", content: "You've just created a new post! Great start!"})
+        this.setState({name: this.state.name, title: this.state.title, content: this.state.content})
     }
 
     handlePostClick(e)
@@ -168,7 +167,7 @@ class App extends React.Component{
                         <ContentInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="Content"/>
 
 
-                        <PostSubmit type="submit" onClick={e=>{e.preventDefault(); this.createPost(e)} }  value="AUTHORIZE"/>
+                        <PostSubmit type="submit" onClick={e=>{e.preventDefault(); this.createPost(e)} }  value="POST"/>
                 </div>
 
                 <A>
