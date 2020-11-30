@@ -1,12 +1,8 @@
 import React from "react";
 
-import styled from 'styled-components';
 
 
-const LoginPasswordInput = styled.input`
-font-size: 10pt;
-color: #c5e5ef;
-`;
+const userId = "CR34T0R";
 
 class Profile extends React.Component {
 
@@ -35,7 +31,7 @@ class Profile extends React.Component {
                 </div>
 
                 <div className="profile-pic">
-                    <h2>ID: <span class="CR34T0R">@CR34T0R</span></h2>
+                    <h2>ID: <span class={userId}>@{userId}</span></h2>
                     <img src="/AF_Logo_1-01.png" width="20%" alt="Hi"/>
 
                 </div>

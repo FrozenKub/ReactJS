@@ -110,6 +110,8 @@ color: #c5e5ef;
     box-shadow: inset 2px 2px 2px rgb(0 0 0), inset -2px -2px 2px rgb(0 0 0 / 50%);
 `;
 
+
+
 const userId = "CR34T0R";
 
 class App extends React.Component{
@@ -136,6 +138,7 @@ class App extends React.Component{
     handlePostClick(e)
     {
         e.preventDefault();
+        this.setState({name: userId, title: "", content: ""})
         let x = document.getElementById("createPost");
         if (x.style.display === "none") {
             x.style.display = "flex";
@@ -163,7 +166,7 @@ class App extends React.Component{
                 <div id="createPost" className="post-create">
 
 
-                        <TitleInput type="text" onChange={e=>{this.setState({title: e.target.value})}} name="title" placeholder="Title"/>
+                        <TitleInput type="text"  onChange={e=>{this.setState({title: e.target.value})}} name="title" placeholder="Title" />
 
 
 
