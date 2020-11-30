@@ -97,6 +97,7 @@ height: 9vh;
 border-radius: 0.1em;
 font-size: 10pt;
 color: #c5e5ef;
+font-color: #727170;
 box-shadow: inset 1px 1px 1px rgb(0 0 0), inset -1px -1px 1px rgb(0 0 0 / 50%);
 `;
 
@@ -173,7 +174,7 @@ class App extends React.Component{
 
 
 
-                        <ContentInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="Content"/>
+                        <ContentInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="CONTENT"/>
 
 
                         <PostSubmit type="submit" onClick={e=>{e.preventDefault(); this.createPost(e)} }  value="POST"/>
