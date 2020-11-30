@@ -15,6 +15,7 @@ import Login from "./Login.jsx"
 import Code from "./Code.jsx"
 import Auth from "./Auth.jsx"
 import Register from "./Register.jsx"
+import { SnackbarProvider } from 'notistack';
 
 export default function Main() {
 
@@ -59,7 +60,13 @@ export default function Main() {
                     </Route>
                     <Route exact path="/main">
                         <>
+                            <SnackbarProvider
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'center',
+                                }}>
                         <App />
+                            </SnackbarProvider>
                             <Spoty />
                             <Profile />
                             <StickyUp />

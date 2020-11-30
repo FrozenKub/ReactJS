@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withSnackbar } from 'notistack';
 import styled from 'styled-components';
 import Logo from './Logo.jsx';
 
@@ -133,6 +133,9 @@ class App extends React.Component{
         e.preventDefault();
         array.push({name: userId, title: this.state.title, content: this.state.content})
         this.setState({name: userId, title: this.state.title, content: this.state.content})
+        this.props.enqueueSnackbar("POST CREATED", {
+            variant: 'default',
+        });
     }
 
     handlePostClick(e)
@@ -231,4 +234,4 @@ class App extends React.Component{
 
 }
 
-export default App;
+export default  withSnackbar(App);
