@@ -15,7 +15,6 @@
     "cookie-session": "^1.4.0",
     "emailjs-com": "^2.6.3",
     "express": "^4.17.1",
-    "gasp": "^2.0.2",
     "git": "^0.1.5",
     "gsap": "^3.5.1",
     "mongoose": "^5.10.11",

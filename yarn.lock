@@ -2486,6 +2486,11 @@ assert-plus@1.0.0, assert-plus@^1.0.0:
   resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525"
   integrity sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
 
+assert-plus@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-0.1.5.tgz#ee74009413002d84cec7219c6ac811812e723160"
+  integrity sha1-7nQAlBMALYTOxyGcasgRgS5yMWA=
+
 assert@^1.1.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/assert/-/assert-1.5.0.tgz#55c109aaf6e0aefdb3dc4b71240c70bf574b18eb"
@@ -3806,6 +3811,13 @@ cookies@0.8.0:
   dependencies:
     depd "~2.0.0"
     keygrip "~1.1.0"
+
+cooldown@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/cooldown/-/cooldown-0.2.0.tgz#d3c97daebf2e59eced5639e6db7ef88505ed32df"
+  integrity sha1-08l9rr8uWeztVjnm2374hQXtMt8=
+  dependencies:
+    assert-plus "^0.1.5"
 
 copy-concurrently@^1.0.0:
   version "1.0.5"

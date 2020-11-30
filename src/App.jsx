@@ -121,7 +121,7 @@ class App extends React.Component{
         super(props);
 
         this.handleClick = this.handleClick.bind(this)
-        this.state = {name: userId, title: "", content: ""}
+        this.state = {name: userId, title: "Hello there! This thing on the left is your AnFo ID!", content: "Don't tell anyone!"}
     }
 
     handleClick(e)
@@ -129,15 +129,22 @@ class App extends React.Component{
         e.preventDefault();
     }
 
-    createPost(e)
-    {
+    createPost(e) {
         e.preventDefault();
-        array.push({name: userId, title: this.state.title, content: this.state.content})
-        this.setState({name: userId, title: this.state.title, content: this.state.content})
-        this.props.enqueueSnackbar("POST CREATED", {
-            variant: 'default',
-        });
+
+        if (this.state.title == "" | this.state.content == "") {
+            this.props.enqueueSnackbar("FILL IN BOTH TITLE AND CONTENT", {
+                variant: 'error',
+            });
+        } else {
+            array.push({name: userId, title: this.state.title, content: this.state.content})
+            this.setState({name: userId, title: this.state.title, content: this.state.content})
+            this.props.enqueueSnackbar("POST CREATED", {
+                variant: 'success',
+            });
+        }
     }
+
 
     handlePostClick(e)
     {
