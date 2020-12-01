@@ -4,6 +4,11 @@ import { addPost } from '../actions'
 
 import { store } from '../index'
 
+let value = {
+    name: "",
+    title: "",
+    content: ""
+}
 
 const AddPost = () => {
     let input
@@ -13,15 +18,13 @@ const AddPost = () => {
             <form
                 onSubmit={e => {
                     e.preventDefault()
-                    if (!input.value.trim()) {
-                        return
-                    }
-                    store.dispatch(addPost(input.value))
-                    input.value = ''
+                    store.dispatch(addPost(value))
                 }}
             >
-                <input ref={node => (input = node)} />
-                <button type="submit">Add Post</button>
+                <input type="name" onChange={e=>(value.name = e.target.value)} placeholder="Name"/>
+                <input type="title"  onChange={e=>(value.title = e.target.value)} placeholder="Title"/>
+                <input type="content" onChange={e=>(value.content = e.target.value)} placeholder="Content"/>
+                <button type="submit" >Add Post</button>
             </form>
         </div>
     )

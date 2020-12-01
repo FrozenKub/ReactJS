@@ -1,8 +1,10 @@
 let nextPostId = 0
-export const addPost = text => ({
+export const addPost = value => ({
     type: 'ADD_POST',
     id: nextPostId++,
-    text
+    name: value.name,
+    title: value.title,
+    content: value.content
 })
 
 export const setVisibilityFilter = filter => ({

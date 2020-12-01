@@ -6,7 +6,9 @@ export default function rootReducer(state, action)
         state.push({
             type: 'ADD_POST',
             id: nextPostId++,
-            text: action.text
+            name: action.name,
+            title: action.title,
+            content: action.content
         })
         return state
     }

@@ -14,8 +14,9 @@ PostList.propTypes = {
     posts: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
-            completed: PropTypes.bool.isRequired,
-            text: PropTypes.string.isRequired
+            name: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            content: PropTypes.string.isRequired
         }).isRequired
     ).isRequired,
     togglePost: PropTypes.func.isRequired

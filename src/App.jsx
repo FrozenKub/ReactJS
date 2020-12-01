@@ -2,6 +2,8 @@ import React from "react";
 import { withSnackbar } from 'notistack';
 import styled from 'styled-components';
 import Logo from './Logo.jsx';
+import {store} from "./index";
+import {addPost} from "./actions";
 
 const Themeh2 = styled.p`
   color: #bddce6;
@@ -115,6 +117,13 @@ color: #c5e5ef;
 
 const userId = "CR34T0R";
 
+let value = {
+    name: "",
+    title: "",
+    content: ""
+}
+let counter=0;
+
 class App extends React.Component{
 
     constructor(props) {
@@ -131,14 +140,16 @@ class App extends React.Component{
 
     createPost(e) {
         e.preventDefault();
-
-        if (this.state.title == "" | this.state.content == "") {
+        console.log(store.getState())
+        if (value.title == "" | value.content == "") {
             this.props.enqueueSnackbar("FILL IN BOTH TITLE AND CONTENT", {
                 variant: 'error',
             });
         } else {
-            array.push({name: userId, title: this.state.title, content: this.state.content})
-            this.setState({name: userId, title: this.state.title, content: this.state.content})
+            store.dispatch(addPost(value))
+            array.push({name: userId, title: store.getState()[counter].title, content: store.getState()[counter].content});
+            this.setState({name: userId, title: store.getState()[counter].title, content: store.getState()[counter].content})
+            counter++;
             this.props.enqueueSnackbar("POST CREATED", {
                 variant: 'success',
             });
@@ -161,30 +172,28 @@ class App extends React.Component{
     render()
     {
         return (
-
             <>
                 <Logo title={this.state.title} name={this.state.name} content={this.state.content}/>
-
             <div className="flex-container">
-
-
                 <A>
                     <Button onClick={e=>{this.handlePostClick(e)}} className="theme">
                         <Themeh2 className="mar">CREATE POST</Themeh2>
                     </Button>
                 </A>
-
                 <div id="createPost" className="post-create">
 
 
-                        <TitleInput type="text"  onChange={e=>{this.setState({title: e.target.value})}} name="title" placeholder="Title" />
+                        <TitleInput type="text"  onChange={e=>(value.title = e.target.value)} name="title" placeholder="Title" />
+
+                        <ContentInput type="text" onChange={e=>(value.content = e.target.value)} name="content" placeholder="CONTENT"/>
+
+                        <PostSubmit type="submit" onClick={e => {
+                            e.preventDefault()
+                            this.createPost(e)
+                        }}  value="POST"/>
 
 
 
-                        <ContentInput type="text" onChange={e=>{this.setState({content: e.target.value})}} name="content" placeholder="CONTENT"/>
-
-
-                        <PostSubmit type="submit" onClick={e=>{e.preventDefault(); this.createPost(e)} }  value="POST"/>
                 </div>
 
                 <A>
