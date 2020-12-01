@@ -17,6 +17,27 @@ import Auth from "./Auth.jsx"
 import Register from "./Register.jsx"
 import { SnackbarProvider } from 'notistack';
 
+
+
+
+
+
+
+
+
+
+
+
+
+import Footer from '../src/components/Footer'
+import AddPost from '../src/container/AddPost'
+
+
+
+
+
+
+
 export default function Main() {
 
 
@@ -28,6 +49,9 @@ export default function Main() {
 
                         <div className="centered">
                             <img src="/AnFoLogo.png" className="logo"/>
+                            <a>
+                                <Link to="/redux">Redux</Link>
+                            </a>
                             <a>
                                 <Link to="/auth">Auth</Link>
                             </a>
@@ -45,6 +69,12 @@ export default function Main() {
                     </Route>
 
 
+                    <Route exact path="/redux">
+                        <div>
+                            <AddPost />
+                            <Footer />
+                        </div>
+                    </Route>
 
                     <Route exact path="/register">
                         <Register />
