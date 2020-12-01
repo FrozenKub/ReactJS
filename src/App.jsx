@@ -210,37 +210,37 @@ class App extends React.Component{
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-1].name, title: array[array.length-1].title, content: array[array.length-1].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-1].name}</span> - {array[array.length-1].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-1].name}>@{array[array.length-1].name}</span> - {array[array.length-1].title}</Themeh2>
                     </button>
                 </A>
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-2].name, title: array[array.length-2].title, content: array[array.length-2].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-2].name}</span> - {array[array.length-2].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-2].name}>@{array[array.length-2].name}</span> - {array[array.length-2].title}</Themeh2>
                     </button>
                 </A>
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-3].name, title: array[array.length-3].title, content: array[array.length-3].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-3].name}</span> - {array[array.length-3].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-3].name}>@{array[array.length-3].name}</span> - {array[array.length-3].title}</Themeh2>
                     </button>
                 </A>
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-4].name, title: array[array.length-4].title, content: array[array.length-4].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-4].name}</span> - {array[array.length-4].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-4].name}>@{array[array.length-4].name}</span> - {array[array.length-4].title}</Themeh2>
                     </button>
                 </A>
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-5].name, title: array[array.length-5].title, content: array[array.length-5].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-5].name}</span> - {array[array.length-5].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-5].name}>@{array[array.length-5].name}</span> - {array[array.length-5].title}</Themeh2>
                     </button>
                 </A>
 
                 <A>
                     <button onClick={e=>{this.setState({name: array[array.length-6].name, title: array[array.length-6].title, content: array[array.length-6].content})}} className="theme">
-                        <Themeh2 className="mar"><span>@{array[array.length-6].name}</span> - {array[array.length-6].title}</Themeh2>
+                        <Themeh2 className="mar"><span className={array[array.length-6].name}>@{array[array.length-6].name}</span> - {array[array.length-6].title}</Themeh2>
                     </button>
                 </A>
             </div>
