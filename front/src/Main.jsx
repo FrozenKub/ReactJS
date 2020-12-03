@@ -20,6 +20,7 @@ import { SnackbarProvider } from 'notistack';
 
 import Footer from '../src/components/Footer'
 import AddPost from '../src/container/AddPost'
+import Navbar from "./components/Navbar";
 
 
 export default function Main() {
@@ -55,8 +56,7 @@ export default function Main() {
 
                     <Route exact path="/redux">
                         <div>
-                            <AddPost />
-                            <Footer />
+                            <Navbar />
                         </div>
                     </Route>
 

@@ -45,23 +45,10 @@ class loginClass extends React.Component{
 
         this.state =
             {
-            login: "",
-            password: ""
-            },
-            this.state = { apiResponse: "" };
+                login: "",
+                password: ""
+            }
     }
-
-    callAPI() {
-        fetch("http://localhost:9000")
-            .then(res => res.text())
-            .then(res => this.setState({ apiResponse: res }));
-    }
-
-    componentWillMount() {
-        this.callAPI();
-    }
-
-
 
     render() {
 
@@ -82,26 +69,25 @@ class loginClass extends React.Component{
                 </UpperCorner>
 
                 <div className="centered">
-                <div className="login-block">
-                    <p className="App-intro">Oh! Here it is: {this.state.apiResponse}</p>
+                    <div className="login-block">
 
-                <img src="/AnFoLogo.png" className="logo"/>
+                        <img src="/AnFoLogo.png" className="logo"/>
 
-                <div className="login">
-                    <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="AnFo ID"/>
+                        <div className="login">
+                            <div>
+                                <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="AnFo ID"/>
+                            </div>
+
+                            <div>
+                                <LoginPasswordInput type="password" onChange={e=>{this.setState({password: e.target.value})}} name="password" placeholder="Password"/>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/>
+                        </div>
                     </div>
-
-                    <div>
-                        <LoginPasswordInput type="password" onChange={e=>{this.setState({password: e.target.value})}} name="password" placeholder="Password"/>
-                    </div>
-
-                </div>
-
-                <div>
-                    <input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/>
-                </div>
-                </div>
                 </div>
             </div>
 
