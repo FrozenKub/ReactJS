@@ -47,7 +47,18 @@ class loginClass extends React.Component{
             {
             login: "",
             password: ""
-            }
+            },
+            this.state = { apiResponse: "" };
+    }
+
+    callAPI() {
+        fetch("http://localhost:9000")
+            .then(res => res.text())
+            .then(res => this.setState({ apiResponse: res }));
+    }
+
+    componentWillMount() {
+        this.callAPI();
     }
 
 
@@ -57,7 +68,6 @@ class loginClass extends React.Component{
         return (
 
             <div className="login-page">
-
 
                 <UpperCorner>
                     <LargerA>
@@ -73,6 +83,7 @@ class loginClass extends React.Component{
 
                 <div className="centered">
                 <div className="login-block">
+                    <p className="App-intro">Oh! Here it is: {this.state.apiResponse}</p>
 
                 <img src="/AnFoLogo.png" className="logo"/>
 
