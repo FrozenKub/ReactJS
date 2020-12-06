@@ -18,8 +18,6 @@ import Register from "./Register.jsx"
 import { SnackbarProvider } from 'notistack';
 
 
-import Footer from '../src/components/Footer'
-import AddPost from '../src/container/AddPost'
 import Navbar from "./components/Navbar";
 
 

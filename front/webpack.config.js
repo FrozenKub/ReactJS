@@ -39,10 +39,19 @@ module.exports = {
         })
     ],
     devServer: {
+        proxy: {
+            '/api/': {
+                target: {
+                    host: 'localhost',
+                    protocol: 'http',
+                    port: 7000
+                }
+            }
+        },
         contentBase: path.join(__dirname, '/public'),
         historyApiFallback: true,
         compress: true,
-        port: 3000,
+        port: 1488,
         open: true
     }
 

@@ -37,7 +37,19 @@ font-size: 14pt;
 class registerClass extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {login: "", password: ""}
+        this.state = {username: "", password: ""}
+    }
+
+    handleSubmit(e)
+    {
+        console.log(JSON.stringify(this.state))
+        fetch('api/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { console.log(data) }) });
     }
 
 
@@ -63,7 +75,7 @@ class registerClass extends React.Component{
 
                 <div className="login">
                     <div>
-                        <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="EMAIL ADRESS"/>
+                        <LoginPasswordInput type="text" onChange={e=>{this.setState({username: e.target.value})}} name="login" placeholder="login"/>
                     </div>
 
                     <div>
@@ -72,7 +84,7 @@ class registerClass extends React.Component{
 
                 </div>
 
-                <div><input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="REGISTER"/></div>
+                <div><input type="submit" onClick={e=>{e.preventDefault(); this.handleSubmit(e)} } className="loginbutton" value="REGISTER"/></div>
             </div>
 
         );

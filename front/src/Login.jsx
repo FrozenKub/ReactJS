@@ -45,10 +45,25 @@ class loginClass extends React.Component{
 
         this.state =
             {
-                login: "",
+                username: "",
                 password: ""
             }
     }
+
+
+
+
+    handleSubmit(e)
+    {
+        fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { console.log(data) }) });
+    }
+
 
     render() {
 
@@ -75,7 +90,7 @@ class loginClass extends React.Component{
 
                         <div className="login">
                             <div>
-                                <LoginPasswordInput type="text" onChange={e=>{this.setState({login: e.target.value})}} name="username" placeholder="AnFo ID"/>
+                                <LoginPasswordInput type="text" onChange={e=>{this.setState({username: e.target.value})}} name="username" placeholder="AnFo ID"/>
                             </div>
 
                             <div>
@@ -85,7 +100,7 @@ class loginClass extends React.Component{
                         </div>
 
                         <div>
-                            <input type="submit" onClick={e=>{e.preventDefault(); alert(JSON.stringify(this.state))} } className="loginbutton" value="AUTHORIZE"/>
+                            <input type="submit" onClick={e=>{e.preventDefault(); this.handleSubmit(e)} } className="loginbutton" value="AUTHORIZE"/>
                         </div>
                     </div>
                 </div>
