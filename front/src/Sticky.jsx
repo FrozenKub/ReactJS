@@ -12,13 +12,13 @@ const UpperCorner = styled.div`
     height: 10vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
 `;
 
 const DivMenu = styled.div`
 position: absolute;
-width: 100bw;
+width: 100vw;
 height: 100vh;
 
 `;
@@ -29,19 +29,30 @@ font-size: 14pt;
 `;
 
 
-const StickyUp = () => {
-    return (
-        <>
-            <div class="block-stiky">
-                <img src="/AnFoLogo.png" height="5%" width="5%" alt="Hi"/>
-        </div>
-            <UpperCorner>
-                <LargerA>
-                    <Link to="/">Home</Link>
-                </LargerA>
-            </UpperCorner>
-    </>
-);
+class StickyUp extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+    }
+
+
+
+
+    render() {
+        return (
+            <>
+                <div class="block-stiky">
+                    <img src="/AnFoLogo.png" height="5%" width="5%" alt="Hi"/>
+                </div>
+                <UpperCorner>
+                    <LargerA>
+                        <Link to="/">Home</Link>
+                    </LargerA>
+                </UpperCorner>
+            </>
+        );
+    }
 }
 
 export default StickyUp;

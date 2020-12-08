@@ -21,77 +21,102 @@ import { SnackbarProvider } from 'notistack';
 import Navbar from "./components/Navbar";
 
 
-export default function Main() {
+class Main extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state=
+            {
+                login: "UNREGISTERED"
+            }
+    }
 
 
-    return (
-        <Router>
-            <div>
-                <Switch>
-                    <Route exact path="/">
+    handleSubmit(e)
+    {
+        fetch('/api/users/name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { this.setState({login: data.login})}) });
 
-                        <div className="centered">
-                            <img src="/AnFoLogo.png" className="logo"/>
-                            <a>
-                                <Link to="/redux">Redux</Link>
-                            </a>
-                            <a>
-                                <Link to="/auth">Auth</Link>
-                            </a>
-                            <a>
-                                <Link to="/login">Login</Link>
-                            </a>
-                            <a>
-                                <Link to="/register">Register</Link>
-                            </a>
-                            <a>
-                                <Link to="/main">Main</Link>
-                            </a>
-                        </div>
+    }
 
-                    </Route>
+    render() {
+        return (
+            <Router>
+                <div>
+                    <Switch>
+                        <Route exact path="/">
+
+                            <div className="centered">
+                                <img src="/AnFoLogo.png" className="logo"/>
+                                <a>
+                                    <Link to="/redux">Redux</Link>
+                                </a>
+                                <a>
+                                    <Link to="/auth">Auth</Link>
+                                </a>
+                                <a>
+                                    <Link to="/login">Login</Link>
+                                </a>
+                                <a>
+                                    <Link to="/register">Register</Link>
+                                </a>
+                                <a onClick={e=>{e.preventDefault(); this.handleSubmit(e)} }>
+                                    <Link to="/main">Main</Link>
+                                </a>
+                            </div>
+
+                        </Route>
 
 
-                    <Route exact path="/redux">
-                        <div>
-                            <Navbar />
-                        </div>
-                    </Route>
+                        <Route exact path="/redux">
+                            <div>
+                                <Navbar/>
+                            </div>
+                        </Route>
 
-                    <Route exact path="/register">
-                        <Register />
-                    </Route>
-                    <Route exact path="/auth">
-                        <Auth />
-                    </Route>
-                    <Route exact path="/code">
-                        <Code />
-                    </Route>
-                    <Route exact path="/login">
-                            <Login />
-                    </Route>
-                    <Route exact path="/main">
-                        <>
-                            <SnackbarProvider
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'center',
-                                }}>
-                        <App />
-                            </SnackbarProvider>
-                            <Spoty />
-                            <Profile />
-                            <StickyUp />
-                        </>
-                    </Route>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
-    );
+                        <Route exact path="/register">
+                            <Register/>
+                        </Route>
+                        <Route exact path="/auth">
+                            <Auth/>
+                        </Route>
+                        <Route exact path="/code">
+                            <Code/>
+                        </Route>
+                        <Route exact path="/login">
+                            <Login/>
+                        </Route>
+                        <Route exact path="/main">
+                            <>
+                                <SnackbarProvider
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'center',
+                                    }}>
+                                    <App login={this.state.login}/>
+                                </SnackbarProvider>
+                                <Spoty/>
+                                <Profile login={this.state.login}/>
+                                <StickyUp/>
+                            </>
+                        </Route>
+                        <Route exact path="/">
+                            <Home/>
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
+        );
+    }
 }
+
+export default Main
 
 function Home() {
 }

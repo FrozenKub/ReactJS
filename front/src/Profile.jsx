@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 
@@ -10,10 +11,22 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
-            name: "CR34T0R",
+            name: this.props.login,
             title: "HEY THERE!",
             content: "HERE IS CONTENT, YOU KNOW"
         }
+    }
+
+
+    handleLogout(e)
+    {
+        fetch('/api/user/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.data)
+        }).then(response => { response.json().then(data => { console.log(data) }) });
     }
 
     render() {
@@ -28,10 +41,13 @@ class Profile extends React.Component {
                     <h3>Total Posts: 123</h3>
                     <h3>Total Comments: 587</h3>
                     <h3>Total AnLi: 332</h3>
+                    <Link onClick={e => {
+                        e.preventDefault()
+                        this.handleLogout(e)}}>LogOut</Link>
                 </div>
 
                 <div className="profile-pic">
-                    <h2>ID: <span class={userId}>@{userId}</span></h2>
+                    <h2>ID: <span class={this.props.login}>@{this.props.login}</span></h2>
                     <img src="/AF_Logo_1-01.png" width="20%" alt="Hi"/>
 
                 </div>

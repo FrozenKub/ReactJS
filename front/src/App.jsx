@@ -130,7 +130,7 @@ class App extends React.Component{
         super(props);
 
         this.handleClick = this.handleClick.bind(this)
-        this.state = {name: userId, title: "Hello there! This thing on the left is your AnFo ID!", content: "Don't tell anyone!"}
+        this.state = {  name: this.props.login, title: "SHIT ASS TITLE", content: "Don't tell anyone!"}
     }
 
     handleClick(e)
