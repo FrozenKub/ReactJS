@@ -28,7 +28,7 @@ class Main extends React.Component {
 
         this.state=
             {
-                login: "UNREGISTERED"
+                login: ""
             }
     }
 

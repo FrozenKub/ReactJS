@@ -7,10 +7,4 @@ export default combineReducers({
     errors: errorReducer,
     auth: authReducer,
     posts
-
-
-
-
-
-
 })

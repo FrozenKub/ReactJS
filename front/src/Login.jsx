@@ -16,7 +16,7 @@ const UpperCorner = styled.div`
     height: 10vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     
 `;
 
@@ -52,7 +52,6 @@ class loginClass extends React.Component{
 
 
 
-
     handleSubmit(e)
     {
         fetch('/api/users/login', {
@@ -74,12 +73,6 @@ class loginClass extends React.Component{
                 <UpperCorner>
                     <LargerA>
                         <Link to="/">Home</Link>
-                    </LargerA>
-                    <LargerA>
-                        <Link to="/auth">Apply for Authorization</Link>
-                    </LargerA>
-                    <LargerA>
-                        <Link to="/code">Redeem Code</Link>
                     </LargerA>
                 </UpperCorner>
 

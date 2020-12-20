@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo.jsx';
 import {store} from "./index";
 import {addPost} from "./actions";
+import Profile from "./Profile.jsx";
 
 const Themeh2 = styled.p`
   color: #bddce6;
@@ -115,7 +116,8 @@ color: #c5e5ef;
 
 
 
-const userId = "CR34T0R";
+
+let userId= "";
 
 let value = {
     name: "",
@@ -133,6 +135,23 @@ class App extends React.Component{
         this.state = {  name: this.props.login, title: "SHIT ASS TITLE", content: "Don't tell anyone!"}
     }
 
+    componentDidMount() {
+
+
+        fetch('/api/users/name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { userId = data.login})});
+
+
+        this.setState({name: userId, title: "THERE WILL BE TITLE", content: "THERE WILL BE YOUR CONTENT"})
+
+    }
+
+
     handleClick(e)
     {
         e.preventDefault();
@@ -140,15 +159,33 @@ class App extends React.Component{
 
     createPost(e) {
         e.preventDefault();
+
+
+        fetch('/api/users/name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { userId = data.login})});
+
+        value.name = userId;
+
         console.log(store.getState())
-        if (value.title == "" | value.content == "") {
+        if (userId == undefined)
+        {
+            this.props.enqueueSnackbar("YOU'RE NOT AUTHORIZED", {
+                variant: 'error',
+            });
+        }
+        else if (value.title == "" | value.content == "") {
             this.props.enqueueSnackbar("FILL IN BOTH TITLE AND CONTENT", {
                 variant: 'error',
             });
         } else {
             store.dispatch(addPost(value))
             array.push({name: userId, title: store.getState()[counter].title, content: store.getState()[counter].content});
-            this.setState({name: userId, title: store.getState()[counter].title, content: store.getState()[counter].content})
+            this.setState({name: userId, title: store.getState()[counter].title, content: store.getState()[counter].content});
             counter++;
             this.props.enqueueSnackbar("POST CREATED", {
                 variant: 'success',
@@ -160,6 +197,17 @@ class App extends React.Component{
     handlePostClick(e)
     {
         e.preventDefault();
+
+
+        fetch('/api/users/name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(this.state)
+        }).then(response => { response.json().then(data => { userId = data.login})});
+
+
         this.setState({name: userId, title: "", content: ""})
         let x = document.getElementById("createPost");
         if (x.style.display === "none") {
@@ -173,6 +221,7 @@ class App extends React.Component{
     {
         return (
             <>
+                <Profile name={this.state.name}/>
                 <Logo title={this.state.title} name={this.state.name} content={this.state.content}/>
             <div className="flex-container">
                 <A>

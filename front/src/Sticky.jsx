@@ -37,13 +37,11 @@ class StickyUp extends React.Component {
     }
 
 
-
-
     render() {
         return (
             <>
                 <div class="block-stiky">
-                    <img src="/AnFoLogo.png" height="5%" width="5%" alt="Hi"/>
+                    <img src="/AnFoLogo.png" width="5%" alt="Hi"/>
                 </div>
                 <UpperCorner>
                     <LargerA>

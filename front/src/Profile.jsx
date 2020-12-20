@@ -11,22 +11,27 @@ class Profile extends React.Component {
         super(props);
 
         this.state = {
-            name: this.props.login,
+            name: this.props.name,
             title: "HEY THERE!",
             content: "HERE IS CONTENT, YOU KNOW"
         }
     }
 
 
+
     handleLogout(e)
     {
+
+        alert("YOU ARE LOGGED OUT!")
+
         fetch('/api/user/logout', {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify(this.data)
         }).then(response => { response.json().then(data => { console.log(data) }) });
+
     }
 
     render() {
